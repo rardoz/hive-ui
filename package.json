@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo no test yet",
-    "precommit": "prettier es6 --write 'src/**/*.js'"
+    "precommit": "prettier es6 --write 'src/**/*.js' && git add ."
   },
   "repository": {
     "type": "git",

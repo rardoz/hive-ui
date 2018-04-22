@@ -6,35 +6,43 @@ class Pollen {
     this.type = type.toLowerCase();
     this.attributes = attributes || {};
     this.children = [];
+    this.setContent = this._setContent.bind(this);
+    this.setAttribute = this._setAttribute.bind(this);
+    this.getAttribute = this._getAttribute.bind(this);
+    this.appendChild = this._appendChild.bind(this);
+    this.generateId = this._generateId.bind(this);
+    this.getId = this._getId.bind(this);
+    this.toString = this._toString.bind(this);
+    this.render = this._render.bind(this);
   }
 
-  setContent(content) {
+  _setContent(content) {
     this.content = content;
   }
 
-  setAttribute(attribute = "title", value = "example") {
+  _setAttribute(attribute = "title", value = "example") {
     this.attributes[attribute] = value;
   }
 
-  getAttribute(attribute = "title", defaultValue = false) {
+  _getAttribute(attribute = "title", defaultValue = false) {
     return this.attributes[attribute] || defaultValue;
   }
 
-  appendChild(node) {
+  _appendChild(node) {
     this.children.push(node);
   }
 
-  generateId() {
+  _generateId() {
     this.id = generateId(10);
     this.setAttribute("id", this.id);
     return this.id;
   }
 
-  getId() {
-    return this.id || this.generateID();
+  _getId() {
+    return this.id || this.generateId();
   }
 
-  toString() {
+  _toString() {
     let openTag = `<${this.type}`;
 
     for (let key in this.attributes) {
@@ -45,13 +53,14 @@ class Pollen {
     openTag += selfClose ? "/>" : ">";
 
     this.children.forEach(child => {
-      openTag += child.toString();
+      openTag += typeof child === "string" ? child : child.toString();
     });
 
     openTag += selfClose ? "" : `</${this.type}>`;
+    return openTag;
   }
 
-  render() {
+  _render() {
     return this.toString();
   }
 }

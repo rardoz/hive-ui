@@ -1,4 +1,4 @@
-export const POLLEN_TYPES = [
+const POLLEN_TYPES = [
   "area",
   "base",
   "br",
@@ -16,3 +16,7 @@ export const POLLEN_TYPES = [
   "track",
   "wbr"
 ];
+
+module.exports = {
+  POLLEN_TYPES
+}

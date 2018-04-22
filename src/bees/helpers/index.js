@@ -1,4 +1,4 @@
-export const generateID = length => {
+const generateID = length => {
   let text = "";
   const possible =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -9,3 +9,7 @@ export const generateID = length => {
 
   return text;
 };
+
+module.exports = {
+  generateID
+}

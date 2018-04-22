@@ -1,6 +1,7 @@
-import { generateID, POLLEN_TYPES } from "../bees";
+const bees = require('../bees')
+const {generateID, POLLEN_TYPES} = bees
 
-export class Pollen {
+class Pollen {
   constructor({ type = "div", attributes = {} }) {
     this.type = type.toLowerCase();
     this.attributes = attributes || {};
@@ -54,3 +55,5 @@ export class Pollen {
     return this.toString();
   }
 }
+
+module.exports = Pollen

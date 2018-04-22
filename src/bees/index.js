@@ -1,2 +1,4 @@
-export { generateID } from "./helpers";
-export { POLLEN_TYPES } from "./constants";
+module.exports = {
+  generateID: require('./helpers').generateID,
+  POLLEN_TYPES: require('./constants').POLLEN_TYPES
+}

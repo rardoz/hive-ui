@@ -1,1 +1,1 @@
-import {Pollen} from './combs'
+import { Pollen } from "./combs";

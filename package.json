@@ -1,5 +1,5 @@
 {
-  "name": "@rojo/hive-ui",
+  "name": "ui-hive",
   "version": "0.0.1-alpha-0",
   "description": "A front-end asset generator used with jam stack.",
   "main": "src/index.js",

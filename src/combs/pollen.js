@@ -1,9 +1,9 @@
-import { generateId, POLLEN_TYPES } from "../bees";
+import { generateID, POLLEN_TYPES } from "../bees";
 
-export default class Pollen {
-  constructor({ type = "div", ...attributes }) {
+export class Pollen {
+  constructor({ type = "div", attributes = {} }) {
     this.type = type.toLowerCase();
-    this.attributes = attributes || [];
+    this.attributes = attributes || {};
     this.children = [];
   }
 
@@ -30,7 +30,7 @@ export default class Pollen {
   }
 
   getId() {
-    return this.id || this.generateId();
+    return this.id || this.generateID();
   }
 
   toString() {

@@ -10,6 +10,14 @@ const generateID = length => {
   return text;
 };
 
+const renderInDom = (Pollen, DomNode) => {
+  if (typeof window !== "undefined") {
+    console.log(Pollen.render(), Pollen);
+    DomNode.innerHTML = Pollen.render();
+  }
+};
+
 module.exports = {
-  generateID
+  generateID,
+  renderInDom
 };

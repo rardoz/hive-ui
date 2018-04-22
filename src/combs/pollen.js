@@ -1,5 +1,5 @@
-const bees = require('../bees')
-const {generateID, POLLEN_TYPES} = bees
+const bees = require("../bees");
+const { generateID, POLLEN_TYPES } = bees;
 
 class Pollen {
   constructor({ type = "div", attributes = {} }) {
@@ -56,4 +56,4 @@ class Pollen {
   }
 }
 
-module.exports = Pollen
+module.exports = Pollen;

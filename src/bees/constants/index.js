@@ -19,4 +19,4 @@ const POLLEN_TYPES = [
 
 module.exports = {
   POLLEN_TYPES
-}
+};

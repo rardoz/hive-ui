@@ -1,5 +1,5 @@
-const Pollen = require('./pollen')
+const Pollen = require("./pollen");
 
 module.exports = {
   Pollen
-}
+};

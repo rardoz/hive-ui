@@ -12,4 +12,4 @@ const generateID = length => {
 
 module.exports = {
   generateID
-}
+};

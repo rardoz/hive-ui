@@ -1,4 +1,4 @@
-const POLLEN_TYPES = [
+const SELF_CLOSING_HTML_TAGS = [
   "area",
   "base",
   "br",
@@ -18,5 +18,5 @@ const POLLEN_TYPES = [
 ];
 
 module.exports = {
-  POLLEN_TYPES
+  SELF_CLOSING_HTML_TAGS
 };

@@ -1,7 +1,7 @@
-const bees = require("../bees");
-const { generateID, POLLEN_TYPES } = bees;
+const { SELF_CLOSING_HTML_TAGS } = require("../constants");
+const { generateId } = require("../helpers");
 
-class Pollen {
+class Node {
   constructor({ type = "div", attributes = {} }) {
     this.type = type.toLowerCase();
     this.attributes = attributes || {};
@@ -49,11 +49,12 @@ class Pollen {
       openTag += ` ${key}="${this.attributes[key]}"`;
     }
 
-    const selfClose = POLLEN_TYPES.includes(this.type) && !this.children[0];
+    const selfClose =
+      SELF_CLOSING_HTML_TAGS.includes(this.type) && !this.children[0];
     openTag += selfClose ? "/>" : ">";
 
     this.children.forEach(child => {
-      openTag += typeof child === "string" ? child : child.toString();
+      openTag += typeof child === "string" ? child : child.render();
     });
 
     openTag += selfClose ? "" : `</${this.type}>`;
@@ -65,4 +66,4 @@ class Pollen {
   }
 }
 
-module.exports = Pollen;
+module.exports = Node;

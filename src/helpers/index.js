@@ -10,10 +10,9 @@ const generateID = length => {
   return text;
 };
 
-const renderInDom = (Pollen, DomNode) => {
+const renderInDom = (Node, DomNode) => {
   if (typeof window !== "undefined") {
-    console.log(Pollen.render(), Pollen);
-    DomNode.innerHTML = Pollen.render();
+    DomNode.innerHTML = Node.render();
   }
 };
 

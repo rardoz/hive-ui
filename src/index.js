@@ -1,4 +1,6 @@
 module.exports = {
-  Pollen: require("./combs").Pollen,
-  renderInDom: require("./bees").renderInDom
+  nodes: require("./nodes"),
+  Node: require("./nodes").Node,
+  renderInDom: require("./helpers").renderInDom,
+  generateID: require("./helpers").generateID
 };
